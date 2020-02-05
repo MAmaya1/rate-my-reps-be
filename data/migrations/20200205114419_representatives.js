@@ -1,7 +1,7 @@
 exports.up = function(knex) {
   return knex.schema
     .createTable('representatives', tbl => {
-        tbl.increments('rep_id');
+        tbl.increments();
         tbl
             .string('name', 128)
             .unique()
