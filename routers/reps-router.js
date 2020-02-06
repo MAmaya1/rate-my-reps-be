@@ -47,7 +47,7 @@ router.post('/', (req, res) => {
                 res.status(201).json(rep)
             })
             .catch(err => {
-                res.status(500).json({ error: err, message: 'This representative already exists in the database' })
+                res.status(422).json({ error: err, message: 'Error adding representative to database, a record with this name may already exist' })
             })
     }
 })
