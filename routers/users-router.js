@@ -38,8 +38,8 @@ router.post('/register', (req, res) => {
     const newUser = req.body;
     console.log(newUser)
 
-    if (!newUser.name || !newUser.email) {
-        res.status(400).json({ errorMessage: 'User requires a name and email address' })
+    if (!newUser.address || !newUser.email) {
+        res.status(400).json({ errorMessage: 'User requires an address and email' })
     } else {
         Users.addUser(newUser)
             .then(user => {
