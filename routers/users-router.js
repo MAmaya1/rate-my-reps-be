@@ -1,6 +1,10 @@
 const router = require('express').Router();
 
+// Import Models
+
 const Users = require('../models/users-model');
+const UserReps = require('../models/user-reps-model');
+const Representatives = require('../models/reps-model');
 
 // GET Users
 

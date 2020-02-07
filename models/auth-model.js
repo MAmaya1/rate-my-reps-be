@@ -7,7 +7,8 @@ module.exports = {
 }
 
 function getUsers() {
-    return db('users');
+    return db('users')
+        .select("id", "address", "email");
 }
 
 function getUserById(id) {

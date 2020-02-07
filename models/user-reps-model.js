@@ -25,8 +25,3 @@ function getUserReps(id) {
         .where('representatives.id', id)
         .join('users', 'representatives.id', '=', 'users.id')
 }
-
-// function addUserReps(rep) {
-//     return db('representatives')
-
-// }

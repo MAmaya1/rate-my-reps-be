@@ -3,7 +3,9 @@ const db = require('../data/dbConfig');
 module.exports = {
     getReps,
     getRepById,
-    addRep
+    addRep,
+    updateRep,
+    deleteRep
 }
 
 function getReps() {
@@ -22,4 +24,16 @@ function addRep(rep) {
         .then(([id]) => {
             return getRepById(id);
         })
+}
+
+function updateRep(id, changes) {
+    return db('representatives')
+        .where({ id })
+        .update(changes)
+}
+
+function deleteRep(id) {
+    return db('representatives')
+        .where({ id })
+        .del();
 }
