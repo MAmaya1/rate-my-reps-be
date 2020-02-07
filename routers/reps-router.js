@@ -37,8 +37,6 @@ router.get('/:id', (req, res) => {
 router.post('/', (req, res) => {
     const newRep = req.body;
 
-    console.log(req.body)
-
     if (!newRep.name && !newRep.office && !newRep.division) {
         res.status(400).json({ errorMessage: 'New representative is missing data' })
     } else {

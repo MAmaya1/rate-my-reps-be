@@ -9,6 +9,8 @@ const server = express();
 // Import Routers
 
 const repsRouter = require('../routers/reps-router');
+const usersRouter = require('../routers/users-router');
+const userRepsRouter = require('../routers/user-reps-router');
 
 // Configure Middleware
 
@@ -23,5 +25,7 @@ server.get('/', (req, res) => {
 })
 
 server.use('/api/representatives', repsRouter);
+server.use('/api/users', usersRouter);
+server.use('/api/user-representatives', userRepsRouter);
 
 module.exports = server;
